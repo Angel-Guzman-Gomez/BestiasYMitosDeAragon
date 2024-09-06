@@ -13,19 +13,11 @@ header {
     margin-bottom: 0;
 }
 
-.image-buttons {
-    margin-top: 0;
-}
-
-.image-buttons a {
-    text-decoration: none;
-}
-
 .image-buttons img {
     width: 336px;
     height: 66px;
     margin: 0 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, ;
 }
 
 .image-buttons img:hover {
@@ -127,4 +119,22 @@ p {
     to {
         opacity: 1;
     }
+}
+
+/*Libro */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.libro-img {
+    display: block;
+}
+
+.comprar-img {
+    width: 336px;
+    height: 66px;
+    position: absolute;
+    bottom: 250px;
+    left: 200px;
 }
