@@ -13,11 +13,25 @@ header {
     margin-bottom: 0;
 }
 
+ul.image-buttons {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding predeterminado */
+    margin: 0; /* Elimina el margin predeterminado */
+}
+
+ul.image-buttons li {
+    display: inline-block; /* Alinea los elementos de la lista en línea */
+}
+
+.image-buttons a {
+    text-decoration: none;
+}
+
 .image-buttons img {
     width: 336px;
     height: 66px;
     margin: 0 30px;
-    transition: transform 0.3s ease, ;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-buttons img:hover {
@@ -133,8 +147,8 @@ p {
 
 .comprar-img {
     width: 336px;
-    height: 66px;
+    height: 66.4px;
     position: absolute;
-    bottom: 250px;
-    left: 200px;
+    bottom: 10px;
+    left: 0;
 }
