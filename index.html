@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página Principal</title>
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+    <body>
+        <header>
+            <div >
+                <a class="first-buttons">
+                    <img src="images/botones/casita.svg">
+                </a>
+                <a class="image-buttons" href="pages/libro.html">
+                    <img src="images/botones/botonLibro.svg">
+                </a>
+                <a class="image-buttons" href="pages/merchandising.html">
+                    <img src="images/botones/botonMerchandising.svg">
+                </a>
+                <a class="image-buttons" href="pages/test.html">
+                    <img src="images/botones/botonTest.svg">
+                </a>
+                <a class="image-buttons" href="pages/seBusca.html">
+                    <img src="images/botones/botonSeBusca.svg">
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <div>
+                <img src="images/index/inicio.png" class="inicio">
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/index/animas-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/basajarau-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/bruja-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/buco-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/caco-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/cirila-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/donas-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/duende-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/fantasma-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/gnomo-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/guixa-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/ome-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/sierpe-web.png">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/index/silban-web.png">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+                <span class="dot" onclick="currentSlide(13)"></span>
+                <span class="dot" onclick="currentSlide(14)"></span>
+            </div>
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+            </script>
+        </main>
+
+        <footer>
+        </footer>
+    </body>
+</html>
