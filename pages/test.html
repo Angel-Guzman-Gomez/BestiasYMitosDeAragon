@@ -5,6 +5,117 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Libro</title>
         <link rel="stylesheet" href="../css/estilos.css">
+        <script>
+            function calcularGanador() {
+                // Inicializamos las variables de los candidatos
+                let animas = 0, basajarau = 0, bruja = 0, buco = 0, caco = 0;
+                let cirila = 0, donas = 0, duende = 0, fantasma = 0, gnomo = 0;
+                let guixa = 0, ome = 0, sierpe = 0, silban = 0;
+
+                // Asociar cada respuesta a un candidato
+                for (let i = 1; i <= 14; i++) {
+                    const pregunta = document.querySelector(`input[name="pregunta${i}"]:checked`);
+                    if (pregunta) {
+                        switch (pregunta.value) {
+                            case "animas": animas++; break;
+                            case "basajarau": basajarau++; break;
+                            case "bruja": bruja++; break;
+                            case "buco": buco++; break;
+                            case "caco": caco++; break;
+                            case "cirila": cirila++; break;
+                            case "donas": donas++; break;
+                            case "duende": duende++; break;
+                            case "fantasma": fantasma++; break;
+                            case "gnomo": gnomo++; break;
+                            case "guixa": guixa++; break;
+                            case "ome": ome++; break;
+                            case "sierpe": sierpe++; break;
+                            case "silban": silban++; break;
+                        }
+                    }
+                }
+
+                // Encontrar el candidato con más puntos
+                let candidatos = {
+                    animas: animas, basajarau: basajarau, bruja: bruja, buco: buco, caco: caco,
+                    cirila: cirila, donas: donas, duende: duende, fantasma: fantasma, gnomo: gnomo,
+                    guixa: guixa, ome: ome, sierpe: sierpe, silban: silban
+                };
+
+                let ganador = Object.keys(candidatos).reduce((a, b) => candidatos[a] > candidatos[b] ? a : b);
+
+                // Asignar una imagen según el ganador
+                let resultado = "";
+                let imagenSrc = "";
+
+                switch (ganador) {
+                    case "animas":
+                        resultado = "¡Animas es el ganador!";
+                        imagenSrc = "../images/index/animas-web.png";
+                        break;
+                    case "basajarau":
+                        resultado = "¡Basajarau es el ganador!";
+                        imagenSrc = "../images/index/basajarau-web.png";
+                        break;
+                    case "bruja":
+                        resultado = "¡Bruja es la ganadora!";
+                        imagenSrc = "../images/index/bruja-web.png";
+                        break;
+                    case "buco":
+                        resultado = "¡Buco es el ganador!";
+                        imagenSrc = "../images/index/buco-web.png";
+                        break;
+                    case "caco":
+                        resultado = "¡Caco es el ganador!";
+                        imagenSrc = "../images/index/caco-web.png";
+                        break;
+                    case "cirila":
+                        resultado = "¡Cirila es la ganadora!";
+                        imagenSrc = "../images/index/cirila-web.png";
+                        break;
+                    case "donas":
+                        resultado = "¡Donas es el ganador!";
+                        imagenSrc = "../images/index/donas-web.png";
+                        break;
+                    case "duende":
+                        resultado = "¡Duende es el ganador!";
+                        imagenSrc = "../images/index/duende-web.png";
+                        break;
+                    case "fantasma":
+                        resultado = "¡Fantasma es el ganador!";
+                        imagenSrc = "../images/index/fantasma-web.png";
+                        break;
+                    case "gnomo":
+                        resultado = "¡Gnomo es el ganador!";
+                        imagenSrc = "../images/index/gnomo-web.png";
+                        break;
+                    case "guixa":
+                        resultado = "¡Guixa es la ganadora!";
+                        imagenSrc = "../images/index/guixa-web.png";
+                        break;
+                    case "ome":
+                        resultado = "¡Ome es el ganador!";
+                        imagenSrc = "../images/index/ome-web.png";
+                        break;
+                    case "sierpe":
+                        resultado = "¡Sierpe es el ganador!";
+                        imagenSrc = "../images/index/sierpe-web.png";
+                        break;
+                    case "silban":
+                        resultado = "¡Silban es el ganador!";
+                        imagenSrc = "../images/index/silban-web.png";
+                        break;
+                }
+
+                // Mostrar el resultado y la imagen
+                document.getElementById("resultado").innerText = resultado;
+                document.getElementById("imagenGanador").src = imagenSrc;
+                document.getElementById("imagenGanador").style.display = "block";
+
+                // Prevenir el envío del formulario
+                return false;
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -35,13 +146,191 @@
                             <img src="../images/botones/botonSeBusca.svg">
                         </a>
                     </li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <form onsubmit="return calcularGanador();">
+                <h1>Test</h1>
+            
+                <!-- Pregunta 1 -->
+                <div class="pregunta">
+                    <h3>Pregunta 1</h3>
+                    <label><input type="radio" name="pregunta1" value="animas"> Respuesta 1 (Animas)</label><br>
+                    <label><input type="radio" name="pregunta1" value="basajarau"> Respuesta 2 (Basajarau)</label><br>
+                    <label><input type="radio" name="pregunta1" value="bruja"> Respuesta 3 (Bruja)</label><br>
+                    <label><input type="radio" name="pregunta1" value="buco"> Respuesta 4 (Buco)</label><br>
+                    <label><input type="radio" name="pregunta1" value="caco"> Respuesta 5 (Caco)</label><br>
+                    <label><input type="radio" name="pregunta1" value="cirila"> Respuesta 6 (Cirila)</label><br>
+                    <label><input type="radio" name="pregunta1" value="donas"> Respuesta 7 (Donas)</label>
                 </div>
-            </header>
+            
+                <!-- Pregunta 2 -->
+                <div class="pregunta">
+                    <h3>Pregunta 2</h3>
+                    <label><input type="radio" name="pregunta2" value="duende"> Respuesta 1 (Duende)</label><br>
+                    <label><input type="radio" name="pregunta2" value="fantasma"> Respuesta 2 (Fantasma)</label><br>
+                    <label><input type="radio" name="pregunta2" value="gnomo"> Respuesta 3 (Gnomo)</label><br>
+                    <label><input type="radio" name="pregunta2" value="guixa"> Respuesta 4 (Guixa)</label><br>
+                    <label><input type="radio" name="pregunta2" value="ome"> Respuesta 5 (Ome)</label><br>
+                    <label><input type="radio" name="pregunta2" value="sierpe"> Respuesta 6 (Sierpe)</label><br>
+                    <label><input type="radio" name="pregunta2" value="silban"> Respuesta 7 (Silban)</label>
+                </div>
+            
+                <!-- Pregunta 3 -->
+                <div class="pregunta">
+                    <h3>Pregunta 3</h3>
+                    <label><input type="radio" name="pregunta3" value="animas"> Respuesta 1 (Animas)</label><br>
+                    <label><input type="radio" name="pregunta3" value="basajarau"> Respuesta 2 (Basajarau)</label><br>
+                    <label><input type="radio" name="pregunta3" value="bruja"> Respuesta 3 (Bruja)</label><br>
+                    <label><input type="radio" name="pregunta3" value="buco"> Respuesta 4 (Buco)</label><br>
+                    <label><input type="radio" name="pregunta3" value="caco"> Respuesta 5 (Caco)</label><br>
+                    <label><input type="radio" name="pregunta3" value="cirila"> Respuesta 6 (Cirila)</label><br>
+                    <label><input type="radio" name="pregunta3" value="donas"> Respuesta 7 (Donas)</label>
+                </div>
+            
+                <!-- Pregunta 4 -->
+                <div class="pregunta">
+                    <h3>Pregunta 4</h3>
+                    <label><input type="radio" name="pregunta4" value="duende"> Respuesta 1 (Duende)</label><br>
+                    <label><input type="radio" name="pregunta4" value="fantasma"> Respuesta 2 (Fantasma)</label><br>
+                    <label><input type="radio" name="pregunta4" value="gnomo"> Respuesta 3 (Gnomo)</label><br>
+                    <label><input type="radio" name="pregunta4" value="guixa"> Respuesta 4 (Guixa)</label><br>
+                    <label><input type="radio" name="pregunta4" value="ome"> Respuesta 5 (Ome)</label><br>
+                    <label><input type="radio" name="pregunta4" value="sierpe"> Respuesta 6 (Sierpe)</label><br>
+                    <label><input type="radio" name="pregunta4" value="silban"> Respuesta 7 (Silban)</label>
+                </div>
+            
+                <!-- Pregunta 5 -->
+                <div class="pregunta">
+                    <h3>Pregunta 5</h3>
+                    <label><input type="radio" name="pregunta5" value="animas"> Respuesta 1 (Animas)</label><br>
+                    <label><input type="radio" name="pregunta5" value="basajarau"> Respuesta 2 (Basajarau)</label><br>
+                    <label><input type="radio" name="pregunta5" value="bruja"> Respuesta 3 (Bruja)</label><br>
+                    <label><input type="radio" name="pregunta5" value="buco"> Respuesta 4 (Buco)</label><br>
+                    <label><input type="radio" name="pregunta5" value="caco"> Respuesta 5 (Caco)</label><br>
+                    <label><input type="radio" name="pregunta5" value="cirila"> Respuesta 6 (Cirila)</label><br>
+                    <label><input type="radio" name="pregunta5" value="donas"> Respuesta 7 (Donas)</label>
+                </div>
+            
+                <!-- Pregunta 6 -->
+                <div class="pregunta">
+                    <h3>Pregunta 6</h3>
+                    <label><input type="radio" name="pregunta6" value="duende"> Respuesta 1 (Duende)</label><br>
+                    <label><input type="radio" name="pregunta6" value="fantasma"> Respuesta 2 (Fantasma)</label><br>
+                    <label><input type="radio" name="pregunta6" value="gnomo"> Respuesta 3 (Gnomo)</label><br>
+                    <label><input type="radio" name="pregunta6" value="guixa"> Respuesta 4 (Guixa)</label><br>
+                    <label><input type="radio" name="pregunta6" value="ome"> Respuesta 5 (Ome)</label><br>
+                    <label><input type="radio" name="pregunta6" value="sierpe"> Respuesta 6 (Sierpe)</label><br>
+                    <label><input type="radio" name="pregunta6" value="silban"> Respuesta 7 (Silban)</label>
+                </div>
+            
+                <!-- Pregunta 7 -->
+                <div class="pregunta">
+                    <h3>Pregunta 7</h3>
+                    <label><input type="radio" name="pregunta7" value="animas"> Respuesta 1 (Animas)</label><br>
+                    <label><input type="radio" name="pregunta7" value="basajarau"> Respuesta 2 (Basajarau)</label><br>
+                    <label><input type="radio" name="pregunta7" value="bruja"> Respuesta 3 (Bruja)</label><br>
+                    <label><input type="radio" name="pregunta7" value="buco"> Respuesta 4 (Buco)</label><br>
+                    <label><input type="radio" name="pregunta7" value="caco"> Respuesta 5 (Caco)</label><br>
+                    <label><input type="radio" name="pregunta7" value="cirila"> Respuesta 6 (Cirila)</label><br>
+                    <label><input type="radio" name="pregunta7" value="donas"> Respuesta 7 (Donas)</label>
+                </div>
+            
+                <!-- Pregunta 8 -->
+                <div class="pregunta">
+                    <h3>Pregunta 8</h3>
+                    <label><input type="radio" name="pregunta8" value="duende"> Respuesta 1 (Duende)</label><br>
+                    <label><input type="radio" name="pregunta8" value="fantasma"> Respuesta 2 (Fantasma)</label><br>
+                    <label><input type="radio" name="pregunta8" value="gnomo"> Respuesta 3 (Gnomo)</label><br>
+                    <label><input type="radio" name="pregunta8" value="guixa"> Respuesta 4 (Guixa)</label><br>
+                    <label><input type="radio" name="pregunta8" value="ome"> Respuesta 5 (Ome)</label><br>
+                    <label><input type="radio" name="pregunta8" value="sierpe"> Respuesta 6 (Sierpe)</label><br>
+                    <label><input type="radio" name="pregunta8" value="silban"> Respuesta 7 (Silban)</label>
+                </div>
+            
+                <!-- Pregunta 9 -->
+                <div class="pregunta">
+                    <h3>Pregunta 9</h3>
+                    <label><input type="radio" name="pregunta9" value="animas"> Respuesta 1 (Animas)</label><br>
+                    <label><input type="radio" name="pregunta9" value="basajarau"> Respuesta 2 (Basajarau)</label><br>
+                    <label><input type="radio" name="pregunta9" value="bruja"> Respuesta 3 (Bruja)</label><br>
+                    <label><input type="radio" name="pregunta9" value="buco"> Respuesta 4 (Buco)</label><br>
+                    <label><input type="radio" name="pregunta9" value="caco"> Respuesta 5 (Caco)</label><br>
+                    <label><input type="radio" name="pregunta9" value="cirila"> Respuesta 6 (Cirila)</label><br>
+                    <label><input type="radio" name="pregunta9" value="donas"> Respuesta 7 (Donas)</label>
+                </div>
+            
+                <!-- Pregunta 10 -->
+                <div class="pregunta">
+                    <h3>Pregunta 10</h3>
+                    <label><input type="radio" name="pregunta10" value="duende"> Respuesta 1 (Duende)</label><br>
+                    <label><input type="radio" name="pregunta10" value="fantasma"> Respuesta 2 (Fantasma)</label><br>
+                    <label><input type="radio" name="pregunta10" value="gnomo"> Respuesta 3 (Gnomo)</label><br>
+                    <label><input type="radio" name="pregunta10" value="guixa"> Respuesta 4 (Guixa)</label><br>
+                    <label><input type="radio" name="pregunta10" value="ome"> Respuesta 5 (Ome)</label><br>
+                    <label><input type="radio" name="pregunta10" value="sierpe"> Respuesta 6 (Sierpe)</label><br>
+                    <label><input type="radio" name="pregunta10" value="silban"> Respuesta 7 (Silban)</label>
+                </div>
+            
+                <!-- Pregunta 11 -->
+                <div class="pregunta">
+                    <h3>Pregunta 11</h3>
+                    <label><input type="radio" name="pregunta11" value="animas"> Respuesta 1 (Animas)</label><br>
+                    <label><input type="radio" name="pregunta11" value="basajarau"> Respuesta 2 (Basajarau)</label><br>
+                    <label><input type="radio" name="pregunta11" value="bruja"> Respuesta 3 (Bruja)</label><br>
+                    <label><input type="radio" name="pregunta11" value="buco"> Respuesta 4 (Buco)</label><br>
+                    <label><input type="radio" name="pregunta11" value="caco"> Respuesta 5 (Caco)</label><br>
+                    <label><input type="radio" name="pregunta11" value="cirila"> Respuesta 6 (Cirila)</label><br>
+                    <label><input type="radio" name="pregunta11" value="donas"> Respuesta 7 (Donas)</label>
+                </div>
+            
+                <!-- Pregunta 12 -->
+                <div class="pregunta">
+                    <h3>Pregunta 12</h3>
+                    <label><input type="radio" name="pregunta12" value="duende"> Respuesta 1 (Duende)</label><br>
+                    <label><input type="radio" name="pregunta12" value="fantasma"> Respuesta 2 (Fantasma)</label><br>
+                    <label><input type="radio" name="pregunta12" value="gnomo"> Respuesta 3 (Gnomo)</label><br>
+                    <label><input type="radio" name="pregunta12" value="guixa"> Respuesta 4 (Guixa)</label><br>
+                    <label><input type="radio" name="pregunta12" value="ome"> Respuesta 5 (Ome)</label><br>
+                    <label><input type="radio" name="pregunta12" value="sierpe"> Respuesta 6 (Sierpe)</label><br>
+                    <label><input type="radio" name="pregunta12" value="silban"> Respuesta 7 (Silban)</label>
+                </div>
+            
+                <!-- Pregunta 13 -->
+                <div class="pregunta">
+                    <h3>Pregunta 13</h3>
+                    <label><input type="radio" name="pregunta13" value="animas"> Respuesta 1 (Animas)</label><br>
+                    <label><input type="radio" name="pregunta13" value="basajarau"> Respuesta 2 (Basajarau)</label><br>
+                    <label><input type="radio" name="pregunta13" value="bruja"> Respuesta 3 (Bruja)</label><br>
+                    <label><input type="radio" name="pregunta13" value="buco"> Respuesta 4 (Buco)</label><br>
+                    <label><input type="radio" name="pregunta13" value="caco"> Respuesta 5 (Caco)</label><br>
+                    <label><input type="radio" name="pregunta13" value="cirila"> Respuesta 6 (Cirila)</label><br>
+                    <label><input type="radio" name="pregunta13" value="donas"> Respuesta 7 (Donas)</label>
+                </div>
+            
+                <!-- Pregunta 14 -->
+                <div class="pregunta">
+                    <h3>Pregunta 14</h3>
+                    <label><input type="radio" name="pregunta14" value="duende"> Respuesta 1 (Duende)</label><br>
+                    <label><input type="radio" name="pregunta14" value="fantasma"> Respuesta 2 (Fantasma)</label><br>
+                    <label><input type="radio" name="pregunta14" value="gnomo"> Respuesta 3 (Gnomo)</label><br>
+                    <label><input type="radio" name="pregunta14" value="guixa"> Respuesta 4 (Guixa)</label><br>
+                    <label><input type="radio" name="pregunta14" value="ome"> Respuesta 5 (Ome)</label><br>
+                    <label><input type="radio" name="pregunta14" value="sierpe"> Respuesta 6 (Sierpe)</label><br>
+                    <label><input type="radio" name="pregunta14" value="silban"> Respuesta 7 (Silban)</label>
+                </div>
+            
+                <button type="submit">Enviar</button>
+            </form>
+            
 
-            <main>
-            </main>
+            <div id="resultado" style="font-size: 20px; margin-top: 20px;"></div>
+            <img id="imagenGanador" src="" style="display:none; margin-top: 20px;" alt="Ganador">
+           </main>
 
-            <footer>
-            </footer>
-        </body>
-    </html>
+        <footer>
+        </footer>
+    </body>
+</html>
