@@ -225,16 +225,21 @@ label {
     margin-left: 400px;
 }
 
+.pregunta p {
+    margin-left: 0;
+}
+
 .pregunta label {
     display: block;
     margin-bottom: 10px;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
+    margin-left: 0;
 }
 
 .pregunta input[type="radio"] {
     margin-right: 10px;
-    margin-left: 20px;
+    margin-left: -20px;
 }
 
 @font-face {
@@ -266,9 +271,24 @@ label {
     z-index: 1000;
 }
 
+#mensajeGanador {
+    position: absolute;
+    top: -10px;
+    left: 630px;
+    z-index: 2;
+    font-size: 5em;
+}
+
+#cerrarPantallaCompleta {
+    position: absolute;
+    bottom: 100px;
+    z-index: 2;
+}
+
 #pantallaCompleta img {
     max-width: 80%;
     height: auto;
+    z-index: 1;
 }
 
 #pantallaCompleta.oculto {
