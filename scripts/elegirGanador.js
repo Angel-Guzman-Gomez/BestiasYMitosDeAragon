@@ -46,11 +46,11 @@ function calcularGanador() {
             imagenSrc = "../images/index/basajarau-web.png";
             break;
         case "bruja":
-            resultado = "¡Bruja es la ganadora!";
+            resultado = "¡bruja de trasmoz son las ganadoras!";
             imagenSrc = "../images/index/bruja-web.png";
             break;
         case "buco":
-            resultado = "¡Buco es el ganador!";
+            resultado = "¡Buco negro es el ganador!";
             imagenSrc = "../images/index/buco-web.png";
             break;
         case "caco":
@@ -62,11 +62,11 @@ function calcularGanador() {
             imagenSrc = "../images/index/cirila-web.png";
             break;
         case "donas":
-            resultado = "¡Donas es el ganador!";
+            resultado = "¡Encantarias son las ganadoras!";
             imagenSrc = "../images/index/donas-web.png";
             break;
         case "duende":
-            resultado = "¡Duende es el ganador!";
+            resultado = "¡diapleron es el ganador!";
             imagenSrc = "../images/index/duende-web.png";
             break;
         case "fantasma":
@@ -82,7 +82,7 @@ function calcularGanador() {
             imagenSrc = "../images/index/guixa-web.png";
             break;
         case "ome":
-            resultado = "¡Ome es el ganador!";
+            resultado = "¡Ome granizo es el ganador!";
             imagenSrc = "../images/index/ome-web.png";
             break;
         case "sierpe":
