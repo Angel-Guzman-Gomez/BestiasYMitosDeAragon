@@ -57,13 +57,16 @@ footer {
 }
 
 p {
-    color: white;
+    color: #8d4b85;
 }
-h3 {
-    color: white;
+
+h1 {
+    font-family: 'PPPangaia', sans-serif;
+    color: #8d4b85;
 }
 label {
-    color: white;
+    text-align: left;
+    color: #8d4b85;
 }
 
 * {
@@ -210,4 +213,31 @@ label {
 .seBusca {
     width: 1920px;
     height: 2661px;
+}
+
+/*test */
+.pregunta {
+    text-align: left;
+}
+
+.pregunta label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24.6px;
+}
+
+.pregunta input[type="radio"] {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+@font-face {
+    font-family: 'PPPangaia';
+    src: url('PPPangaia-Bold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PPPangaia';
+    src: url('PPPangaia-Bold.otf') format('truetype');
 }
